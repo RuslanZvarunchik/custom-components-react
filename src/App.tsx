@@ -1,21 +1,18 @@
 import React from 'react';
-import Counter from "./components/Counter";
+import './styles/App.css'
+import PostList from "./components/PostList";
+import MyButton from "./components/UI/button/MyButton";
+import MyInput from "./components/UI/input/MyInput";
 
 function App() {
     return (
         <div className="App">
-            <div className="post">
-                <div className="post__content">
-                    <strong>1. JavaScript</strong>
-                    <div>
-                        JavaScript is programming language
-                    </div>
-                </div>
-                <div className="post__btns">
-                    <button>Delete</button>
-                </div>
-            </div>
-            <Counter/>
+            <form>
+                <MyInput type={"text"} placeholder={"Post title"}/>
+                <MyInput type={"text"} placeholder={"Post description"}/>
+                <MyButton disabled={false}>Create post</MyButton>
+            </form>
+            <PostList title={"Posts list"}/>
         </div>
     );
 }
