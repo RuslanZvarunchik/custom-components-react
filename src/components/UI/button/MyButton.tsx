@@ -1,14 +1,9 @@
 import React from 'react';
 import classes from "./MyButton.module.css";
 
-interface MyButtonParams {
-    children: any,
-    disabled:  boolean
-}
-
-const MyButton = ({children,disabled}:MyButtonParams) => {
+const MyButton = ({children,...props}:any) => {
     return (
-        <button disabled={disabled} className={classes.myBtn}>
+        <button {...props} className={classes.myBtn}>
             {children}
         </button>
     );

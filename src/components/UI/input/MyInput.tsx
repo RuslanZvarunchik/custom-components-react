@@ -1,14 +1,9 @@
 import React from 'react';
 import classes from "./MyInput.module.css";
 
-interface MyInputParams {
-    type: string,
-    placeholder: string
-}
-
-const MyInput = ({type,placeholder}:MyInputParams) => {
+const MyInput = ({...props}:any) => {
     return (
-        <input className={classes.myInput} type={type} placeholder={placeholder}/>
+        <input className={classes.myInput} {...props}/>
     );
 };
 

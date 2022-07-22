@@ -1,18 +1,17 @@
-import React, {useState} from 'react';
+import React from 'react';
 import PostItem from "./PostItem";
 
 interface PostListParams {
+    id: number;
     title: string;
+    description: string;
 }
 
-const PostList = ({title}: PostListParams):JSX.Element => {
-        const [posts, setPosts] = useState([
-            {id: 1, title: "JavaScript", description: "JS is a programming language"},
-            {id: 2, title: "TypeScript", description: "TS is a programming language"}
-        ]);
+const PostList = (props:{posts:PostListParams[]}):JSX.Element => {
+    const {posts} = props;
         return (
             <div>
-                <h1 style={{textAlign: "center"}}>{title}</h1>
+                <h1 style={{textAlign: "center"}}>Posts list</h1>
                 {posts.map(post => <PostItem key={post.id} id={post.id} title={post.title} description={post.description}/>)}
             </div>
         );
